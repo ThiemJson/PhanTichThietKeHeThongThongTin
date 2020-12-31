@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.sinhvien_datagrid = new System.Windows.Forms.DataGridView();
+            this.sinhvien_btn_sua = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.sinhvien_rad_nam = new System.Windows.Forms.RadioButton();
             this.sinhvien_rad_nu = new System.Windows.Forms.RadioButton();
@@ -46,10 +46,10 @@
             this.sinhvien_txt_hoten = new System.Windows.Forms.TextBox();
             this.sinhvien_time_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.sinhvien_txt_masinhvien = new System.Windows.Forms.TextBox();
-            this.sinhvien_btn_sua = new System.Windows.Forms.Button();
+            this.sinhvien_datagrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sinhvien_datagrid)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhvien_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,14 +75,14 @@
             this.panel1.Size = new System.Drawing.Size(788, 131);
             this.panel1.TabIndex = 0;
             // 
-            // sinhvien_datagrid
+            // sinhvien_btn_sua
             // 
-            this.sinhvien_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sinhvien_datagrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sinhvien_datagrid.Location = new System.Drawing.Point(0, 131);
-            this.sinhvien_datagrid.Name = "sinhvien_datagrid";
-            this.sinhvien_datagrid.Size = new System.Drawing.Size(788, 301);
-            this.sinhvien_datagrid.TabIndex = 1;
+            this.sinhvien_btn_sua.Location = new System.Drawing.Point(693, 88);
+            this.sinhvien_btn_sua.Name = "sinhvien_btn_sua";
+            this.sinhvien_btn_sua.Size = new System.Drawing.Size(75, 23);
+            this.sinhvien_btn_sua.TabIndex = 40;
+            this.sinhvien_btn_sua.Text = "Sửa";
+            this.sinhvien_btn_sua.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -186,6 +186,7 @@
             this.sinhvien_btn_them.TabIndex = 29;
             this.sinhvien_btn_them.Text = "Thêm";
             this.sinhvien_btn_them.UseVisualStyleBackColor = true;
+            this.sinhvien_btn_them.Click += new System.EventHandler(this.sinhvien_btn_them_Click);
             // 
             // sinhvien_txt_diachi
             // 
@@ -223,14 +224,16 @@
             this.sinhvien_txt_masinhvien.Size = new System.Drawing.Size(119, 20);
             this.sinhvien_txt_masinhvien.TabIndex = 22;
             // 
-            // sinhvien_btn_sua
+            // sinhvien_datagrid
             // 
-            this.sinhvien_btn_sua.Location = new System.Drawing.Point(693, 88);
-            this.sinhvien_btn_sua.Name = "sinhvien_btn_sua";
-            this.sinhvien_btn_sua.Size = new System.Drawing.Size(75, 23);
-            this.sinhvien_btn_sua.TabIndex = 40;
-            this.sinhvien_btn_sua.Text = "Sửa";
-            this.sinhvien_btn_sua.UseVisualStyleBackColor = true;
+            this.sinhvien_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.sinhvien_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sinhvien_datagrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sinhvien_datagrid.Location = new System.Drawing.Point(0, 131);
+            this.sinhvien_datagrid.Name = "sinhvien_datagrid";
+            this.sinhvien_datagrid.Size = new System.Drawing.Size(788, 301);
+            this.sinhvien_datagrid.TabIndex = 1;
+            this.sinhvien_datagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sinhvien_grid_CellClick);
             // 
             // Quanlysinhvien
             // 
@@ -244,9 +247,9 @@
             this.Text = "Quản lý sinh viên";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sinhvien_datagrid)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhvien_datagrid)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -10,7 +10,7 @@ namespace PhanTichThietKeHeThongThongTin
 {
     class DataConfig
     {
-        public static string CHUOIKETNOI_Main = "Data Source=HOME-PC;Initial Catalog=QuanLyKyTucXaDaiHocThuyLoiPTTKHTTT;User ID=sa;Password=********;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string CHUOIKETNOI_Main = "Data Source=HOME-PC;Initial Catalog=QuanLyKyTucXaDaiHocThuyLoiPTTKHTTT;User ID=sa;Password=thiemtinhte;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public static string CHUOIKETNOI_Config = "Data Source=HOME-PC;Initial Catalog=QuanLyKyTucXaDaiHocThuyLoiPTTKHTTT; Integated Security = True ";
         public static SqlConnection Conn = null;
         //Kết nối Cơ sở dữ liệu: 
