@@ -16,6 +16,12 @@ namespace PhanTichThietKeHeThongThongTin
         public Quanlyhopdong()
         {
             InitializeComponent();
+            this.hopdong_time_ngaybatdauthue.Format = DateTimePickerFormat.Custom;
+            this.hopdong_time_ngaybatdauthue.CustomFormat = "yyyy/MM/dd";
+            this.hopdong_time_ngayketthucthue.Format = DateTimePickerFormat.Custom;
+            this.hopdong_time_ngayketthucthue.CustomFormat = "yyyy/MM/dd";
+            this.hopdong_time_ngaylaphopdong.Format = DateTimePickerFormat.Custom;
+            this.hopdong_time_ngaylaphopdong.CustomFormat = "yyyy/MM/dd";
             DataConfig.openConnection();
             renderData();
         }
