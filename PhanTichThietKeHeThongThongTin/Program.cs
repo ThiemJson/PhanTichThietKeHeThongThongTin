@@ -16,7 +16,7 @@ namespace PhanTichThietKeHeThongThongTin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Quanlynhanvien());
+            Application.Run(new Quanlyphong());
         }
     }
 }
