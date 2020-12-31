@@ -18,6 +18,7 @@ namespace PhanTichThietKeHeThongThongTin
         //private SqlDataReader data = null;
         public static SqlDataAdapter adapter = null;
         public static DataTable table = null;
+        public static SqlDataReader data = null;
         public static string query = null;
 
         public static void openConnection()
