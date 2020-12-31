@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,91 @@ namespace PhanTichThietKeHeThongThongTin
         public Quanlynhanvien()
         {
             InitializeComponent();
+            DataConfig.openConnection();
+            renderData();
         }
+
+        void renderData()
+        {
+            this.nhanvien_datagrid.DataSource = null;
+            this.Nhanvien_renderData();
+        }
+
+        bool Nhanvienquanly_validate()
+        {
+            if (this.nhanvien_txt_chucdanh.Text.ToString() == "" ||
+                this.nhanvien_txt_email.Text.ToString() == "" ||
+                this.nhanvien_txt_tennhanvien.Text.ToString() == "" ||
+                this.nhanvien_txt_dienthoai.Text.ToString() == "" ||
+                this.nhanvien_txt_manhanvien.Text.ToString() == "" ||
+                this.nhanvien_txt_diachi.Text.ToString() == ""
+                )
+            {
+                return false;
+            };
+            return true;
+        }
+        private void nhanvien_grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = nhanvien_datagrid.Rows[e.RowIndex];
+
+            this.nhanvien_txt_manhanvien.Text = row.Cells[0].Value.ToString();
+            this.nhanvien_txt_tennhanvien.Text = row.Cells[1].Value.ToString();
+            this.nhanvien_txt_email.Text = row.Cells[2].Value.ToString();
+
+            this.nhanvien_txt_diachi.Text = row.Cells[3].Value.ToString();
+            this.nhanvien_txt_dienthoai.Text = row.Cells[4].Value.ToString();
+
+
+            this.nhanvien_txt_chucdanh.Text = row.Cells[6].Value.ToString();
+            if (row.Cells[5].Value.ToString() == "Nam") { this.nhanvien_rad_nam.Checked = true; this.nhanvien_rad_nu.Checked = false; } else { this.nhanvien_rad_nam.Checked = false; this.nhanvien_rad_nu.Checked = true; };
+        }
+        void Nhanvien_renderData()
+        {
+            DataConfig.query = "SELECT * FROM nhanvien";
+            DataConfig.adapter = new SqlDataAdapter(DataConfig.query, DataConfig.Conn);
+            DataConfig.table = new DataTable();
+            DataConfig.adapter.Fill(DataConfig.table);
+
+            this.nhanvien_datagrid.DataSource = DataConfig.table;
+        }
+        private void nhanvien_btn_them_Click(object sender, EventArgs e)
+        {
+            if (Nhanvienquanly_validate())
+            {
+                string manhanvien = this.nhanvien_txt_manhanvien.Text.ToString();
+                string tennhanvien = this.nhanvien_txt_tennhanvien.Text.ToString();
+                string email = this.nhanvien_txt_email.Text.ToString();
+                string diachi = this.nhanvien_txt_diachi.Text.ToString();
+                string dienthoai = this.nhanvien_txt_dienthoai.Text.ToString();
+                string gioitinh = (this.nhanvien_rad_nam.Checked == true) ? "Nam" : "Nữ";
+                string chucdanh = this.nhanvien_txt_chucdanh.Text.ToString();
+
+                DataConfig.query = $"INSERT INTO NHANVIENQUANLY VALUES(N'{manhanvien}',N'{tennhanvien}',N'{email}',N'{diachi}',{dienthoai}, N'{gioitinh}',N'{chucdanh}');";
+                DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+
+                try
+                {
+                    DataConfig.cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    //TODO
+                }
+            }
+            this.clearData();
+            this.renderData();
+        }
+
+        void clearData()
+        {
+            this.nhanvien_txt_manhanvien.Text = "";
+            this.nhanvien_txt_tennhanvien.Text = "";
+            this.nhanvien_txt_email.Text = "";
+            this.nhanvien_txt_diachi.Text = "";
+            this.nhanvien_txt_dienthoai.Text = "";
+            this.nhanvien_txt_chucdanh.Text = "";
+        }
+
     }
 }
