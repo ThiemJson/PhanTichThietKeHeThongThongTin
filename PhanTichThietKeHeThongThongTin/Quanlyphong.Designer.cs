@@ -30,6 +30,7 @@
         {
             this.phong_datagrid = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.phong_btn_sua = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.phong_txt_mota = new System.Windows.Forms.TextBox();
             this.phong_btn_xoa = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.phong_txt_soluongisnhvien = new System.Windows.Forms.TextBox();
             this.phong_txt_sogiuong = new System.Windows.Forms.TextBox();
             this.phong_txt_maphong = new System.Windows.Forms.TextBox();
-            this.phong_btn_sua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.phong_datagrid)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(724, 142);
             this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // phong_btn_sua
+            // 
+            this.phong_btn_sua.Location = new System.Drawing.Point(500, 64);
+            this.phong_btn_sua.Name = "phong_btn_sua";
+            this.phong_btn_sua.Size = new System.Drawing.Size(75, 23);
+            this.phong_btn_sua.TabIndex = 33;
+            this.phong_btn_sua.Text = "Sửa";
+            this.phong_btn_sua.UseVisualStyleBackColor = true;
+            this.phong_btn_sua.Click += new System.EventHandler(this.phong_btn_sua_Click);
             // 
             // label11
             // 
@@ -92,13 +103,13 @@
             // 
             // phong_btn_xoa
             // 
-            this.phong_btn_xoa.Enabled = false;
             this.phong_btn_xoa.Location = new System.Drawing.Point(399, 64);
             this.phong_btn_xoa.Name = "phong_btn_xoa";
             this.phong_btn_xoa.Size = new System.Drawing.Size(75, 23);
             this.phong_btn_xoa.TabIndex = 30;
             this.phong_btn_xoa.Text = "Xóa";
             this.phong_btn_xoa.UseVisualStyleBackColor = true;
+            this.phong_btn_xoa.Click += new System.EventHandler(this.phong_btn_xoa_Click);
             // 
             // phong_btn_them
             // 
@@ -108,6 +119,7 @@
             this.phong_btn_them.TabIndex = 29;
             this.phong_btn_them.Text = "Thêm";
             this.phong_btn_them.UseVisualStyleBackColor = true;
+            this.phong_btn_them.Click += new System.EventHandler(this.phong_btn_them_Click_1);
             // 
             // label7
             // 
@@ -158,16 +170,6 @@
             this.phong_txt_maphong.Name = "phong_txt_maphong";
             this.phong_txt_maphong.Size = new System.Drawing.Size(119, 20);
             this.phong_txt_maphong.TabIndex = 17;
-            // 
-            // phong_btn_sua
-            // 
-            this.phong_btn_sua.Enabled = false;
-            this.phong_btn_sua.Location = new System.Drawing.Point(500, 64);
-            this.phong_btn_sua.Name = "phong_btn_sua";
-            this.phong_btn_sua.Size = new System.Drawing.Size(75, 23);
-            this.phong_btn_sua.TabIndex = 33;
-            this.phong_btn_sua.Text = "Sửa";
-            this.phong_btn_sua.UseVisualStyleBackColor = true;
             // 
             // Quanlyphong
             // 

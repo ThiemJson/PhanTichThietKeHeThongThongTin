@@ -30,6 +30,7 @@
         {
             this.hoadon_datagrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.hoadon_btn_sua = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.hoadon_txt_tongtien = new System.Windows.Forms.TextBox();
             this.hoadon_time_ngaydongtien = new System.Windows.Forms.DateTimePicker();
@@ -50,7 +51,6 @@
             this.hoadon_txt_manhanvien = new System.Windows.Forms.TextBox();
             this.hoadon_txt_maphong = new System.Windows.Forms.TextBox();
             this.hoadon_txt_sohoadon = new System.Windows.Forms.TextBox();
-            this.hoadon_btn_sua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hoadon_datagrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,16 @@
             this.panel1.Size = new System.Drawing.Size(800, 165);
             this.panel1.TabIndex = 2;
             // 
+            // hoadon_btn_sua
+            // 
+            this.hoadon_btn_sua.Location = new System.Drawing.Point(588, 66);
+            this.hoadon_btn_sua.Name = "hoadon_btn_sua";
+            this.hoadon_btn_sua.Size = new System.Drawing.Size(75, 23);
+            this.hoadon_btn_sua.TabIndex = 62;
+            this.hoadon_btn_sua.Text = "Sửa";
+            this.hoadon_btn_sua.UseVisualStyleBackColor = true;
+            this.hoadon_btn_sua.Click += new System.EventHandler(this.hoadon_btn_sua_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -128,6 +138,7 @@
             this.hoadon_btn_xoa.TabIndex = 58;
             this.hoadon_btn_xoa.Text = "Xóa";
             this.hoadon_btn_xoa.UseVisualStyleBackColor = true;
+            this.hoadon_btn_xoa.Click += new System.EventHandler(this.hoadon_btn_xoa_Click);
             // 
             // hoadon_btn_them
             // 
@@ -137,6 +148,7 @@
             this.hoadon_btn_them.TabIndex = 57;
             this.hoadon_btn_them.Text = "Thêm";
             this.hoadon_btn_them.UseVisualStyleBackColor = true;
+            this.hoadon_btn_them.Click += new System.EventHandler(this.hoadon_btn_them_Click_1);
             // 
             // label33
             // 
@@ -258,15 +270,6 @@
             this.hoadon_txt_sohoadon.Name = "hoadon_txt_sohoadon";
             this.hoadon_txt_sohoadon.Size = new System.Drawing.Size(135, 20);
             this.hoadon_txt_sohoadon.TabIndex = 41;
-            // 
-            // hoadon_btn_sua
-            // 
-            this.hoadon_btn_sua.Location = new System.Drawing.Point(588, 66);
-            this.hoadon_btn_sua.Name = "hoadon_btn_sua";
-            this.hoadon_btn_sua.Size = new System.Drawing.Size(75, 23);
-            this.hoadon_btn_sua.TabIndex = 62;
-            this.hoadon_btn_sua.Text = "Sửa";
-            this.hoadon_btn_sua.UseVisualStyleBackColor = true;
             // 
             // Quanlyhoadon
             // 

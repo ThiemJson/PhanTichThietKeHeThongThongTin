@@ -30,6 +30,7 @@
         {
             this.hopdong_datagrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.hopdong_btn_sua = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.hopdong_txt_tongtien = new System.Windows.Forms.TextBox();
             this.hopdong_time_ngaylaphopdong = new System.Windows.Forms.DateTimePicker();
@@ -46,7 +47,6 @@
             this.hopdong_txt_manhanvien = new System.Windows.Forms.TextBox();
             this.hopdong_txt_masinhvien = new System.Windows.Forms.TextBox();
             this.hopdong_txt_mahopdong = new System.Windows.Forms.TextBox();
-            this.hopdong_btn_sua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hopdong_datagrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 142);
             this.panel2.TabIndex = 3;
+            // 
+            // hopdong_btn_sua
+            // 
+            this.hopdong_btn_sua.Location = new System.Drawing.Point(573, 53);
+            this.hopdong_btn_sua.Name = "hopdong_btn_sua";
+            this.hopdong_btn_sua.Size = new System.Drawing.Size(75, 23);
+            this.hopdong_btn_sua.TabIndex = 64;
+            this.hopdong_btn_sua.Text = "Sửa";
+            this.hopdong_btn_sua.UseVisualStyleBackColor = true;
+            this.hopdong_btn_sua.Click += new System.EventHandler(this.hopdong_btn_sua_Click);
             // 
             // label17
             // 
@@ -136,6 +146,7 @@
             this.hopdong_btn_them.TabIndex = 45;
             this.hopdong_btn_them.Text = "Thêm";
             this.hopdong_btn_them.UseVisualStyleBackColor = true;
+            this.hopdong_btn_them.Click += new System.EventHandler(this.hopdong_btn_them_Click_1);
             // 
             // hopdong_btn_xoa
             // 
@@ -145,6 +156,7 @@
             this.hopdong_btn_xoa.TabIndex = 43;
             this.hopdong_btn_xoa.Text = "Xóa";
             this.hopdong_btn_xoa.UseVisualStyleBackColor = true;
+            this.hopdong_btn_xoa.Click += new System.EventHandler(this.hopdong_btn_xoa_Click);
             // 
             // label15
             // 
@@ -220,15 +232,6 @@
             this.hopdong_txt_mahopdong.Name = "hopdong_txt_mahopdong";
             this.hopdong_txt_mahopdong.Size = new System.Drawing.Size(119, 20);
             this.hopdong_txt_mahopdong.TabIndex = 29;
-            // 
-            // hopdong_btn_sua
-            // 
-            this.hopdong_btn_sua.Location = new System.Drawing.Point(573, 53);
-            this.hopdong_btn_sua.Name = "hopdong_btn_sua";
-            this.hopdong_btn_sua.Size = new System.Drawing.Size(75, 23);
-            this.hopdong_btn_sua.TabIndex = 64;
-            this.hopdong_btn_sua.Text = "Sửa";
-            this.hopdong_btn_sua.UseVisualStyleBackColor = true;
             // 
             // Quanlyhopdong
             // 

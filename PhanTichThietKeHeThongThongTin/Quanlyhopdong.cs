@@ -100,5 +100,20 @@ namespace PhanTichThietKeHeThongThongTin
             }
             return true;
         }
+
+        private void hopdong_btn_them_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thêm thông tin hợp đồng thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void hopdong_btn_xoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xóa thông tin hợp đồng thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void hopdong_btn_sua_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thay đổi thông tin hợp đồng thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
     }
 }

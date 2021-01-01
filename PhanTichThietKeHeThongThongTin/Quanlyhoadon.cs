@@ -111,5 +111,20 @@ namespace PhanTichThietKeHeThongThongTin
             this.hoadon_txt_tongtien.Text = row.Cells[10].Value.ToString() + ".000 VNĐ";
 
         }
+
+        private void hoadon_btn_them_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thêm thông tin hóa đơn thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void hoadon_btn_xoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xóa thông tin hóa đơn thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void hoadon_btn_sua_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xóa thông tin hóa đơn thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
     }
 }
