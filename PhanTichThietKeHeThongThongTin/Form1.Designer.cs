@@ -76,6 +76,7 @@
             // 
             this.dangnhap_password.Location = new System.Drawing.Point(194, 93);
             this.dangnhap_password.Name = "dangnhap_password";
+            this.dangnhap_password.PasswordChar = '*';
             this.dangnhap_password.Size = new System.Drawing.Size(202, 20);
             this.dangnhap_password.TabIndex = 4;
             // 

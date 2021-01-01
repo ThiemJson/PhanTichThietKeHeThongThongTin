@@ -14,6 +14,7 @@ namespace PhanTichThietKeHeThongThongTin
     public partial class Form1 : Form
     {
         private string phanquyen;
+        private SqlDataReader dataReader = null;
         public Form1()
         {
             InitializeComponent();
@@ -37,66 +38,76 @@ namespace PhanTichThietKeHeThongThongTin
                     this.Hide();
                     return;
                 }
-
-                DataConfig.query = "SELECT * FROM nhanvien where email = N'"+this.dangnhap_email.Text+"'";
+                dataReader.Close();
+                DataConfig.query = $"SELECT * FROM nhanvien WHERE email = N'{this.dangnhap_email.Text}'";
                 // Tạo câu lệnh Command
                 DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
 
                 // Lấy dữ liệu đưa vào Datareader
-                DataConfig.data = DataConfig.cmd.ExecuteReader();
-                while (DataConfig.data.Read())
+                dataReader = DataConfig.cmd.ExecuteReader();
+                while (dataReader.Read())
                 {
-                    switch (((string)DataConfig.data["phanquyen"]))
+                    if(((string)dataReader["email"]) == this.dangnhap_email.Text)
                     {
-                        case "Quản lý sinh viên":
-                            Quanlysinhvien quanlysinhvien= new Quanlysinhvien();
-                            quanlysinhvien.Show();
-                            this.Hide();
-                            break;
-                        case "Quản lý hóa đơn điện nước":
-                            Quanlyhoadon quanlyhoadon= new Quanlyhoadon();
-                            quanlyhoadon.Show();
-                            this.Hide();
-                            break;
-                        case "Quản lý hóa đơn hợp đồng":
-                            Quanlyhopdong quanlyhopdong = new Quanlyhopdong();
-                            quanlyhopdong.Show();
-                            this.Hide();
-                            break;
-                        case "Quản lý phòng":
-                            Quanlyphong quanlyphong = new Quanlyphong();
-                            quanlyphong.Show();
-                            this.Hide();
-                            break;
+                        switch (((string)dataReader["chucdanh"]))
+                        {
+                            case "Quản lý sinh viên":
+                                Quanlysinhvien quanlysinhvien = new Quanlysinhvien();
+                                quanlysinhvien.Show();
+                                this.Hide();
+                                this.clearData();
+                                break;
+                            case "Quản lý hóa đơn điện nước":
+                                Quanlyhoadon quanlyhoadon = new Quanlyhoadon();
+                                quanlyhoadon.Show();
+                                this.Hide();
+                                this.clearData();
+                                break;
+                            case "Quản lý hợp đồng thuê":
+                                Quanlyhopdong quanlyhopdong = new Quanlyhopdong();
+                                quanlyhopdong.Show();
+                                this.Hide();
+                                this.clearData();
+                                break;
+                            case "Quản lý phòng":
+                                Quanlyphong quanlyphong = new Quanlyphong();
+                                quanlyphong.Show();
+                                this.Hide();
+                                this.clearData();
+                                break;
+                        }
+                        return;
                     }
-
                     DataConfig.closeConnection();
                 }
-
-
+                MessageBox.Show("Thông tin nhập không đúng, vui lòng thử lại ! ", "Thông báo", MessageBoxButtons.OK);
                 this.clearData();
+                dataReader.Close();
                 return;
             }
         }
 
         private bool checkAuth()
         {
-            DataConfig.query = "SELECT * FROM taikhoan";
+            DataConfig.query = $"SELECT * FROM taikhoan WHERE email = N'{this.dangnhap_email.Text}'";
             // Tạo câu lệnh Command
             DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
 
             // Lấy dữ liệu đưa vào Datareader
-            DataConfig.data = DataConfig.cmd.ExecuteReader();
+            dataReader = DataConfig.cmd.ExecuteReader();
 
             // Lấy từng dòng dữ liệu ra từ DataReader , đem đi kiểm tra với Tên đăng nhập của người dùng, nếu trùng userr và pass thì return true;
-            while (DataConfig.data.Read())
+            while (dataReader.Read())
             {
-                if ((string)DataConfig.data["email"] == this.dangnhap_email.Text && (string)DataConfig.data["matkhau"] == this.dangnhap_password.Text)
+                if ((string)dataReader["email"] == this.dangnhap_email.Text && (string)dataReader["matkhau"] == this.dangnhap_password.Text)
                 {
-                    this.phanquyen = ((string)DataConfig.data["phanquyen"]);
+                    this.phanquyen = ((string)dataReader["phanquyen"]);
                     return true;
                 }
             }
+            MessageBox.Show("Thông tin nhập không đúng, vui lòng thử lại ! ", "Thông báo", MessageBoxButtons.OK);
+            this.clearData();
+            dataReader.Close();
             return false;
         }
         bool validateForm()
