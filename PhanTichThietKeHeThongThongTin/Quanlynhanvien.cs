@@ -102,5 +102,19 @@ namespace PhanTichThietKeHeThongThongTin
             this.nhanvien_txt_chucdanh.Text = "";
         }
 
+        private void nhanvien_btn_them_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thêm thông tin nhân viên thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void nhanvien_btn_xoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xóa thông tin nhân viên thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void nhanvien_btn_sua_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thay dổi thông tin nhân viên thành công !", "Thông báo", MessageBoxButtons.OK);
+        }
     }
 }

@@ -83,6 +83,7 @@
             this.sinhvien_btn_sua.TabIndex = 40;
             this.sinhvien_btn_sua.Text = "Sửa";
             this.sinhvien_btn_sua.UseVisualStyleBackColor = true;
+            this.sinhvien_btn_sua.Click += new System.EventHandler(this.sinhvien_btn_sua_Click);
             // 
             // panel8
             // 
@@ -177,6 +178,7 @@
             this.sinhvien_btn_xoa.TabIndex = 30;
             this.sinhvien_btn_xoa.Text = "Xóa";
             this.sinhvien_btn_xoa.UseVisualStyleBackColor = true;
+            this.sinhvien_btn_xoa.Click += new System.EventHandler(this.sinhvien_btn_xoa_Click);
             // 
             // sinhvien_btn_them
             // 

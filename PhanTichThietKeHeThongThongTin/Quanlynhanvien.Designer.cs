@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.nhanvien_datagrid = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.nhanvien_btn_sua = new System.Windows.Forms.Button();
@@ -52,8 +51,11 @@
             this.nhanvien_txt_email = new System.Windows.Forms.TextBox();
             this.nhanvien_txt_tennhanvien = new System.Windows.Forms.TextBox();
             this.nhanvien_txt_manhanvien = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.thongke_datagrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.thongke_btn_thongkesoluonghopdong = new System.Windows.Forms.Button();
             this.thongke_time_ngayketthuc = new System.Windows.Forms.DateTimePicker();
             this.thongke_time_ngaybatdau = new System.Windows.Forms.DateTimePicker();
@@ -61,14 +63,12 @@
             this.thongke_btn_baocaodoanhthu = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvien_datagrid)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thongke_datagrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -95,18 +95,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quản lý nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.thongke_datagrid);
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 424);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Báo cáo thống kê";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // nhanvien_datagrid
             // 
@@ -152,6 +140,7 @@
             this.nhanvien_btn_sua.TabIndex = 64;
             this.nhanvien_btn_sua.Text = "Sửa";
             this.nhanvien_btn_sua.UseVisualStyleBackColor = true;
+            this.nhanvien_btn_sua.Click += new System.EventHandler(this.nhanvien_btn_sua_Click);
             // 
             // panel9
             // 
@@ -193,6 +182,7 @@
             this.nhanvien_btn_xoa.TabIndex = 62;
             this.nhanvien_btn_xoa.Text = "Xóa";
             this.nhanvien_btn_xoa.UseVisualStyleBackColor = true;
+            this.nhanvien_btn_xoa.Click += new System.EventHandler(this.nhanvien_btn_xoa_Click);
             // 
             // nhanvien_btn_them
             // 
@@ -202,6 +192,7 @@
             this.nhanvien_btn_them.TabIndex = 61;
             this.nhanvien_btn_them.Text = "Thêm";
             this.nhanvien_btn_them.UseVisualStyleBackColor = true;
+            this.nhanvien_btn_them.Click += new System.EventHandler(this.nhanvien_btn_them_Click_1);
             // 
             // label35
             // 
@@ -308,6 +299,18 @@
             this.nhanvien_txt_manhanvien.Size = new System.Drawing.Size(119, 20);
             this.nhanvien_txt_manhanvien.TabIndex = 46;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.thongke_datagrid);
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(792, 424);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Báo cáo thống kê";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // thongke_datagrid
             // 
             this.thongke_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -334,6 +337,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(786, 142);
             this.panel2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 13);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "Thống kê trên được dựa theo ngày lập";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "Báo cáo thống kê";
             // 
             // thongke_btn_thongkesoluonghopdong
             // 
@@ -396,26 +419,6 @@
             this.label22.TabIndex = 38;
             this.label22.Text = "Ngày bắt đầu";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "Báo cáo thống kê";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 13);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "Thống kê trên được dựa theo ngày lập";
-            // 
             // Quanlynhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,12 +430,12 @@
             this.Text = "Cán bộ quản lý";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nhanvien_datagrid)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.thongke_datagrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
