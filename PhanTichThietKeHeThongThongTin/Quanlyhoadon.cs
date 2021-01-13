@@ -114,6 +114,23 @@ namespace PhanTichThietKeHeThongThongTin
 
         private void hoadon_btn_them_Click_1(object sender, EventArgs e)
         {
+
+            string mahoadon = this.hoadon_txt_sohoadon.Text.ToString();
+            string maphong = this.hoadon_txt_maphong.Text.ToString();
+            string manhanvien = this.hoadon_txt_manhanvien.Text.ToString();
+            string chisodiendau = this.hoadon_txt_chisodiendau.Text.ToString();
+            string chisodiencuoi = this.hoadon_txt_chisodiencuoi.Text.ToString();
+            string chisonuocdau = this.hoadon_txt_chisonuocdau.Text.ToString();
+            string chisonuocuoi = this.hoadon_txt_chisonuoccuoi.Text.ToString();
+            string ngaydongtien = this.hoadon_time_ngaydongtien.Value.ToShortDateString().ToString();
+
+            DataConfig.query = $"INSERT INTO HOADON(soHD,maP,maNV,ngaydongtien,chisodiendau,chisodiencuoi,dongiadien,chisonuocdau,chisonuoccuoi,dongianuoc) VALUES(N'{mahoadon}',N'{maphong}',N'{manhanvien}',N'{ngaydongtien}',{Int32.Parse(chisodiendau)},{Int32.Parse(chisodiencuoi)},4,{Int32.Parse(chisonuocdau)},{Int32.Parse(chisonuocuoi)},25);";
+            DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+
+            DataConfig.cmd.ExecuteNonQuery();
+
+            this.clearData();
+            this.renderData();
             MessageBox.Show("Thêm thông tin hóa đơn thành công !", "Thông báo", MessageBoxButtons.OK);
         }
 

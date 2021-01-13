@@ -103,6 +103,22 @@ namespace PhanTichThietKeHeThongThongTin
 
         private void hopdong_btn_them_Click_1(object sender, EventArgs e)
         {
+
+            string mahopdong = this.hopdong_txt_mahopdong.Text.ToString();
+            string masinhvien = this.hopdong_txt_masinhvien.Text.ToString();
+            string manhanvien = this.hopdong_txt_manhanvien.Text.ToString();
+
+            string ngaybatdauthue = this.hopdong_time_ngaybatdauthue.Value.ToShortDateString().ToString();
+            string ngayketthucthue = this.hopdong_time_ngayketthucthue.Value.ToShortDateString().ToString();
+            string ngaylaphopdong = this.hopdong_time_ngaylaphopdong.Value.ToShortDateString().ToString();
+
+            DataConfig.query = $"INSERT INTO HOPDONG(maHD,maSV,maNV,ngaybatdau,ngayketthuc,ngaylaphopdong) VALUES(N'{mahopdong}',N'{masinhvien}',N'{manhanvien}',N'{ngaybatdauthue}',N'{ngayketthucthue}',N'{ngaylaphopdong}');";
+            DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+
+            DataConfig.cmd.ExecuteNonQuery();
+            this.clearData();
+            this.renderData();
+
             MessageBox.Show("Thêm thông tin hợp đồng thành công !", "Thông báo", MessageBoxButtons.OK);
         }
 

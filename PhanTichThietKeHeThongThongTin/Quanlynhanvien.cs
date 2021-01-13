@@ -66,28 +66,19 @@ namespace PhanTichThietKeHeThongThongTin
         }
         private void nhanvien_btn_them_Click(object sender, EventArgs e)
         {
-            if (Nhanvienquanly_validate())
-            {
-                string manhanvien = this.nhanvien_txt_manhanvien.Text.ToString();
-                string tennhanvien = this.nhanvien_txt_tennhanvien.Text.ToString();
-                string email = this.nhanvien_txt_email.Text.ToString();
-                string diachi = this.nhanvien_txt_diachi.Text.ToString();
-                string dienthoai = this.nhanvien_txt_dienthoai.Text.ToString();
-                string gioitinh = (this.nhanvien_rad_nam.Checked == true) ? "Nam" : "Nữ";
-                string chucdanh = this.nhanvien_txt_chucdanh.Text.ToString();
 
-                DataConfig.query = $"INSERT INTO NHANVIENQUANLY VALUES(N'{manhanvien}',N'{tennhanvien}',N'{email}',N'{diachi}',{dienthoai}, N'{gioitinh}',N'{chucdanh}');";
-                DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+            string manhanvien = this.nhanvien_txt_manhanvien.Text.ToString();
+            string tennhanvien = this.nhanvien_txt_tennhanvien.Text.ToString();
+            string email = this.nhanvien_txt_email.Text.ToString();
+            string diachi = this.nhanvien_txt_diachi.Text.ToString();
+            string dienthoai = this.nhanvien_txt_dienthoai.Text.ToString();
+            string gioitinh = (this.nhanvien_rad_nam.Checked == true) ? "Nam" : "Nữ";
+            string chucdanh = this.nhanvien_txt_chucdanh.Text.ToString();
 
-                try
-                {
-                    DataConfig.cmd.ExecuteNonQuery();
-                }
-                catch
-                {
-                    //TODO
-                }
-            }
+            DataConfig.query = $"INSERT INTO NHANVIENQUANLY VALUES(N'{manhanvien}',N'{tennhanvien}',N'{email}',N'{diachi}',{dienthoai}, N'{gioitinh}',N'{chucdanh}');";
+            DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+
+            DataConfig.cmd.ExecuteNonQuery();
             this.clearData();
             this.renderData();
         }
@@ -104,6 +95,20 @@ namespace PhanTichThietKeHeThongThongTin
 
         private void nhanvien_btn_them_Click_1(object sender, EventArgs e)
         {
+            string manhanvien = this.nhanvien_txt_manhanvien.Text.ToString();
+            string tennhanvien = this.nhanvien_txt_tennhanvien.Text.ToString();
+            string email = this.nhanvien_txt_email.Text.ToString();
+            string diachi = this.nhanvien_txt_diachi.Text.ToString();
+            string dienthoai = this.nhanvien_txt_dienthoai.Text.ToString();
+            string gioitinh = (this.nhanvien_rad_nam.Checked == true) ? "Nam" : "Nữ";
+            string chucdanh = this.nhanvien_txt_chucdanh.Text.ToString();
+
+            DataConfig.query = $"INSERT INTO NHANVIEN VALUES(N'{manhanvien}',N'{tennhanvien}',N'{email}',N'{diachi}',{dienthoai}, N'{gioitinh}',N'{chucdanh}');";
+            DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+
+            DataConfig.cmd.ExecuteNonQuery();
+            this.clearData();
+            this.renderData();
             MessageBox.Show("Thêm thông tin nhân viên thành công !", "Thông báo", MessageBoxButtons.OK);
         }
 
