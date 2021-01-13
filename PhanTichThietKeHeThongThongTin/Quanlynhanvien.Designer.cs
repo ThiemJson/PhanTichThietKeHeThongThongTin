@@ -366,6 +366,7 @@
             this.thongke_btn_thongkesoluonghopdong.TabIndex = 64;
             this.thongke_btn_thongkesoluonghopdong.Text = "Thống kê số lượng hợp đồng";
             this.thongke_btn_thongkesoluonghopdong.UseVisualStyleBackColor = true;
+            this.thongke_btn_thongkesoluonghopdong.Click += new System.EventHandler(this.thongke_btn_thongkesoluonghopdong_Click);
             // 
             // thongke_time_ngayketthuc
             // 
@@ -391,6 +392,7 @@
             this.thongke_btn_thongketinhtrangphong.TabIndex = 45;
             this.thongke_btn_thongketinhtrangphong.Text = "Thống kê tình trạng phòng";
             this.thongke_btn_thongketinhtrangphong.UseVisualStyleBackColor = true;
+            this.thongke_btn_thongketinhtrangphong.Click += new System.EventHandler(this.thongke_btn_thongketinhtrangphong_Click);
             // 
             // thongke_btn_baocaodoanhthu
             // 
@@ -400,6 +402,7 @@
             this.thongke_btn_baocaodoanhthu.TabIndex = 43;
             this.thongke_btn_baocaodoanhthu.Text = "Báo cáo doanh thu";
             this.thongke_btn_baocaodoanhthu.UseVisualStyleBackColor = true;
+            this.thongke_btn_baocaodoanhthu.Click += new System.EventHandler(this.thongke_btn_baocaodoanhthu_Click);
             // 
             // label21
             // 
