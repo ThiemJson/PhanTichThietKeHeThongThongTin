@@ -60,36 +60,22 @@ namespace PhanTichThietKeHeThongThongTin
 
         private void sinhvien_btn_them_Click(object sender, EventArgs e)
         {
-            //if (this.Sinhvien_validate())
-            //{
-            //    string maSV = this.sinhvien_txt_masinhvien.Text.ToString();
-            //    string hoten = this.sinhvien_txt_hoten.Text.ToString();
+            string maSV = this.sinhvien_txt_masinhvien.Text.ToString();
+            string hoten = this.sinhvien_txt_hoten.Text.ToString();
 
-            //    string dienthoai = this.sinhvien_txt_sodienthoai.Text.ToString();
-            //    string ngaysinh = this.sinhvien_time_ngaysinh.Value.ToShortDateString().ToString();
-            //    string gioitinh = (this.sinhvien_rad_nam.Checked == true) ? "Nam" : "Nữ";
-            //    string diachi = this.sinhvien_txt_diachi.Text.ToString();
+            string dienthoai = this.sinhvien_txt_sodienthoai.Text.ToString();
+            string ngaysinh = this.sinhvien_time_ngaysinh.Value.ToShortDateString().ToString();
+            string gioitinh = (this.sinhvien_rad_nam.Checked == true) ? "Nam" : "Nữ";
+            string diachi = this.sinhvien_txt_diachi.Text.ToString();
 
-            //    DataConfig.query = $"INSERT INTO SINHVIEN VALUES(N'{maSV}', N'{hoten}',N'{ngaysinh}',N'{dienthoai}'),N'{diachi}', N'{gioitinh}';";
-            //    DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+            DataConfig.query = $"INSERT INTO SINHVIEN VALUES(N'{maSV}', N'{hoten}','{ngaysinh}',N'{dienthoai}',N'{diachi}', N'{gioitinh}');";
+            //MessageBox.Show(DataConfig.query, "Thông báo", MessageBoxButtons.OK);
+            DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
 
-            //    DataConfig.cmd.ExecuteNonQuery();
-            //    //MessageBox.Show(this.sinhvien_time_ngaysinh.Value.ToShortDateString().ToString(), "Nogthing");
-            //}
-            //this.clearData();
-            //this.renderData();
+            DataConfig.cmd.ExecuteNonQuery();
+            this.clearData();
+            this.renderData();
             MessageBox.Show("Thêm thông tin sinh viên thành công !", "Thông báo", MessageBoxButtons.OK);
-        }
-        bool Sinhvien_validate()
-        {
-            if (this.sinhvien_txt_diachi.Text.ToString() == "" ||
-                this.sinhvien_txt_masinhvien.Text.ToString() == "" ||
-                this.sinhvien_txt_sodienthoai.Text.ToString() == "" ||
-                this.sinhvien_txt_hoten.Text.ToString() == "")
-            {
-                return false;
-            }
-            return true;
         }
 
         private void sinhvien_btn_xoa_Click(object sender, EventArgs e)

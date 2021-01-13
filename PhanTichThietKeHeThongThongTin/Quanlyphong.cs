@@ -70,6 +70,18 @@ namespace PhanTichThietKeHeThongThongTin
 
         private void phong_btn_them_Click_1(object sender, EventArgs e)
         {
+            string maphong = this.phong_txt_maphong.Text;
+            string sogiuong = this.phong_txt_sogiuong.Text;
+            string sosinhvien = this.phong_txt_soluongisnhvien.Text;
+            string motakhac = this.phong_txt_mota.Text;
+
+            DataConfig.query = $"INSERT INTO PHONG VALUES(N'{maphong}', {sogiuong},{sosinhvien},N'{motakhac}');";
+            //MessageBox.Show(DataConfig.query, "Thông báo", MessageBoxButtons.OK);
+            DataConfig.cmd = new SqlCommand(DataConfig.query, DataConfig.Conn);
+
+            DataConfig.cmd.ExecuteNonQuery();
+            this.clearData();
+            this.renderData();
             MessageBox.Show("Thêm thông tin phòng thành công !", "Thông báo", MessageBoxButtons.OK);
         }
 
