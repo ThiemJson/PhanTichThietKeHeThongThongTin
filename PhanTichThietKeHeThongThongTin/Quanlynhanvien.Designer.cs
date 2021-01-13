@@ -63,6 +63,7 @@
             this.thongke_btn_baocaodoanhthu = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.thongke_btn_baocaodoanhthuhoadon = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvien_datagrid)).BeginInit();
@@ -323,6 +324,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.thongke_btn_baocaodoanhthuhoadon);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.thongke_btn_thongkesoluonghopdong);
@@ -360,9 +362,9 @@
             // 
             // thongke_btn_thongkesoluonghopdong
             // 
-            this.thongke_btn_thongkesoluonghopdong.Location = new System.Drawing.Point(372, 59);
+            this.thongke_btn_thongkesoluonghopdong.Location = new System.Drawing.Point(372, 89);
             this.thongke_btn_thongkesoluonghopdong.Name = "thongke_btn_thongkesoluonghopdong";
-            this.thongke_btn_thongkesoluonghopdong.Size = new System.Drawing.Size(260, 23);
+            this.thongke_btn_thongkesoluonghopdong.Size = new System.Drawing.Size(182, 23);
             this.thongke_btn_thongkesoluonghopdong.TabIndex = 64;
             this.thongke_btn_thongkesoluonghopdong.Text = "Thống kê số lượng hợp đồng";
             this.thongke_btn_thongkesoluonghopdong.UseVisualStyleBackColor = true;
@@ -386,9 +388,9 @@
             // 
             // thongke_btn_thongketinhtrangphong
             // 
-            this.thongke_btn_thongketinhtrangphong.Location = new System.Drawing.Point(372, 26);
+            this.thongke_btn_thongketinhtrangphong.Location = new System.Drawing.Point(372, 53);
             this.thongke_btn_thongketinhtrangphong.Name = "thongke_btn_thongketinhtrangphong";
-            this.thongke_btn_thongketinhtrangphong.Size = new System.Drawing.Size(260, 23);
+            this.thongke_btn_thongketinhtrangphong.Size = new System.Drawing.Size(182, 23);
             this.thongke_btn_thongketinhtrangphong.TabIndex = 45;
             this.thongke_btn_thongketinhtrangphong.Text = "Thống kê tình trạng phòng";
             this.thongke_btn_thongketinhtrangphong.UseVisualStyleBackColor = true;
@@ -396,11 +398,11 @@
             // 
             // thongke_btn_baocaodoanhthu
             // 
-            this.thongke_btn_baocaodoanhthu.Location = new System.Drawing.Point(372, 89);
+            this.thongke_btn_baocaodoanhthu.Location = new System.Drawing.Point(570, 53);
             this.thongke_btn_baocaodoanhthu.Name = "thongke_btn_baocaodoanhthu";
-            this.thongke_btn_baocaodoanhthu.Size = new System.Drawing.Size(260, 23);
+            this.thongke_btn_baocaodoanhthu.Size = new System.Drawing.Size(182, 23);
             this.thongke_btn_baocaodoanhthu.TabIndex = 43;
-            this.thongke_btn_baocaodoanhthu.Text = "Báo cáo doanh thu";
+            this.thongke_btn_baocaodoanhthu.Text = "Báo cáo doanh thu hợp đồng";
             this.thongke_btn_baocaodoanhthu.UseVisualStyleBackColor = true;
             this.thongke_btn_baocaodoanhthu.Click += new System.EventHandler(this.thongke_btn_baocaodoanhthu_Click);
             // 
@@ -421,6 +423,16 @@
             this.label22.Size = new System.Drawing.Size(72, 13);
             this.label22.TabIndex = 38;
             this.label22.Text = "Ngày bắt đầu";
+            // 
+            // thongke_btn_baocaodoanhthuhoadon
+            // 
+            this.thongke_btn_baocaodoanhthuhoadon.Location = new System.Drawing.Point(570, 89);
+            this.thongke_btn_baocaodoanhthuhoadon.Name = "thongke_btn_baocaodoanhthuhoadon";
+            this.thongke_btn_baocaodoanhthuhoadon.Size = new System.Drawing.Size(182, 23);
+            this.thongke_btn_baocaodoanhthuhoadon.TabIndex = 67;
+            this.thongke_btn_baocaodoanhthuhoadon.Text = "Báo cáo doanh thu hóa đơn";
+            this.thongke_btn_baocaodoanhthuhoadon.UseVisualStyleBackColor = true;
+            this.thongke_btn_baocaodoanhthuhoadon.Click += new System.EventHandler(this.thongke_btn_baocaodoanhthuhoadon_Click);
             // 
             // Quanlynhanvien
             // 
@@ -483,5 +495,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button thongke_btn_baocaodoanhthuhoadon;
     }
 }

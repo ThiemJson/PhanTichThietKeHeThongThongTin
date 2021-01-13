@@ -147,7 +147,28 @@ namespace PhanTichThietKeHeThongThongTin
 
         private void thongke_btn_baocaodoanhthu_Click(object sender, EventArgs e)
         {
+            string ngaybatdau = this.thongke_time_ngaybatdau.Value.ToShortDateString().ToString();
+            string ngayketthuc = this.thongke_time_ngayketthuc.Value.ToShortDateString().ToString();
+            DataConfig.query = $"SELECT SUM(tienphaidong) as TongSoTienThu  FROM HOPDONG WHERE ngaylaphopdong > N'{ngaybatdau}' and ngaylaphopdong < N'{ngayketthuc}'";
 
+            DataConfig.adapter = new SqlDataAdapter(DataConfig.query, DataConfig.Conn);
+            DataConfig.table = new DataTable();
+            DataConfig.adapter.Fill(DataConfig.table);
+
+            this.thongke_datagrid.DataSource = DataConfig.table;
+        }
+
+        private void thongke_btn_baocaodoanhthuhoadon_Click(object sender, EventArgs e)
+        {
+            string ngaybatdau = this.thongke_time_ngaybatdau.Value.ToShortDateString().ToString();
+            string ngayketthuc = this.thongke_time_ngayketthuc.Value.ToShortDateString().ToString();
+            DataConfig.query = $"SELECT SUM(tongchiphidiennuoc) as TongSoTienThu  FROM HOADON WHERE ngaydongtien > N'{ngaybatdau}' and ngaydongtien < N'{ngayketthuc}'";
+
+            DataConfig.adapter = new SqlDataAdapter(DataConfig.query, DataConfig.Conn);
+            DataConfig.table = new DataTable();
+            DataConfig.adapter.Fill(DataConfig.table);
+
+            this.thongke_datagrid.DataSource = DataConfig.table;
         }
     }
 }
